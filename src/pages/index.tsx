@@ -1,12 +1,13 @@
 import Head from 'next/head'
+import Layout from '../components/Layout'
 
 export default function Home() {
   return (
     <div className={`
-      h-screen 
+      h-screen
       flex justify-center items-center
-      text-4xl text-gray-300
-      bg-gradient-to-r from-purple-500 to-blue-600
+      bg-gradient-to-r from-blue-500 to-purple-500
+      text-white
     `}>
       <Head>
         <title>CRUD NextJS</title>
@@ -19,7 +20,9 @@ export default function Home() {
         <meta name="description" content="Aplicação CRUD feita com NextJS, Typescript, TailwindCSS e Firebase" />
       </Head>
 
-      <span>Teste de integração do TailwindCSS</span>
+      <Layout title="Cadastro Simples">
+        <span>Content</span>
+      </Layout>
     </div>
   )
 }
