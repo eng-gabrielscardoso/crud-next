@@ -1,7 +1,24 @@
+import Client from '../core/Client'
 import Head from 'next/head'
 import Layout from '../components/Layout'
+import Table from '../components/Table'
 
 export default function Home() {
+
+  const clients = [
+    new Client('1', 'Gabriel Santos Cardoso', 20),
+    new Client('2', 'Fabiana Pantoja Barreto', 23),
+    new Client('3', 'Leonardo Ferreira Gaia', 21)
+  ]
+
+  function selectedClient(client: Client) {
+    console.log('Editar: ' + client.name)
+  }
+
+  function deletedClient(client: Client) {
+    console.log('Excluir: ' + client.name)
+  }
+
   return (
     <div className={`
       h-screen
@@ -21,7 +38,11 @@ export default function Home() {
       </Head>
 
       <Layout title="Cadastro Simples">
-        <span>Content</span>
+        <Table 
+          clients={clients}
+          selectedClient={selectedClient}
+          deletedClient={deletedClient}
+        ></Table>
       </Layout>
     </div>
   )
